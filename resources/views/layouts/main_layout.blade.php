@@ -52,7 +52,8 @@ footer.blade.php
     <![endif]-->
 <style>
     .dropdown-menu{
-        background-color: #2FADDE;
+        /*original colmena v1 background-color: #2FADDE;*/
+        background-color: #fff;
     }
     .highlight{
         font-weight: bold;
@@ -64,6 +65,10 @@ footer.blade.php
     }
     .badge-menu-bar{
         background-color: black;
+    }
+    .dropdown-menu li a:hover{
+        color: #428BCA !important;
+        /*color: #fff !important;*/
     }
 </style>
 </head>
