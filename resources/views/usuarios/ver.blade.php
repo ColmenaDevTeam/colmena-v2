@@ -15,6 +15,7 @@
 	<section id="content">
 		<div class="container">
 			<div class="row">
+				<h3><span class="label label-primary">PNF Informática</span></h3>
 				<div class="ver-form">
 					<div class="row">
 
@@ -25,7 +26,7 @@
 							</div>
 						</div>
 
-						<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">	
+						<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
 							<div class="form-group has-feedback">
 								<label for="apellidos">Apellidos</label>
 								<br>{{$Ousuario->apellidos}}
@@ -47,8 +48,8 @@
 								@else
 									<br>Femenino
 								@endif
-							</div>						
-						</div>		
+							</div>
+						</div>
 
 						<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
 							<div class="form-group has-feedback">
@@ -71,7 +72,7 @@
 							</div>
 						</div>
 
-					</div><!-- /.row -->				
+					</div><!-- /.row -->
 				</div><!-- /.ver-form -->
 			</div><!-- /.row -->
 		</div><!-- /.container-->

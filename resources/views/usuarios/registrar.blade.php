@@ -125,6 +125,16 @@
 						<div class="row">
 							<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
 								<div class="form-group has-feedback">
+									<label for="departamento">Departamento</label><br>
+									<select id="departamento" class="" name="departamento">
+										<option value="1">PNF Informática</option>
+										<option value="2">PNF Higiene y Seguridad Laboral</option>
+										<option value="3">Ambiente...</option>
+									</select>
+								</div>
+							</div>
+							<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+								<div class="form-group has-feedback">
 									<label for="name">Roles de Usuario</label><br>
 										@foreach($roles as $rol)
 											<a href="#{{'rol'.$rol->idRol}}" class="list-group-item" onClick="setCheck('{{'rol'.$rol->idRol}}')">

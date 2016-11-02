@@ -84,7 +84,7 @@ header .navbar {
     padding: 0 0 0 15px;
 }
 .navbar-default .navbar-brand{
-color: #2FADDE;
+color: #428BCA;
 }
 
 header .navbar-collapse  ul.navbar-nav {
@@ -93,7 +93,7 @@ header .navbar-collapse  ul.navbar-nav {
 }
 
 header .navbar-default{
-    background-color:#2FADDE;
+    background-color:#428BCA;
 }
 
 header .nav li a:hover,
@@ -322,8 +322,8 @@ border: #24c4db 1px solid;
 background:#24c4db;
 }
 .c3{
-border: #2FADDE 1px solid;
-background:#2FADDE;
+border: #428BCA 1px solid;
+background:#428BCA;
 }
 .c4{
 border: #609cec 1px solid;
@@ -351,7 +351,7 @@ font-weight: 700;
 .testimonial-solid {
 padding: 50px 0 60px 0;
 margin: 0 0 0 0;
-background:#2FADDE;
+background:#428BCA;
 text-align: center;
 }
 .testi-icon-area {
@@ -366,7 +366,7 @@ padding: 15px 0 0 0;
 margin: 0 0 0 0;
 background: #ffffff;
 text-align: center;
-color: #2FADDE;
+color: #428BCA;
 display: inline-table;
 width: 70px;
 height: 70px;
@@ -375,7 +375,7 @@ height: 70px;
 -webkit-border-radius: 50%;
 border-radius: 50%;
 font-size: 42px;
-border: 1px solid #2FADDE;
+border: 1px solid #428BCA;
 }
 
 .testi-icon-area .carousel-inner {
@@ -501,7 +501,7 @@ section.callaction {
 	position:relative;
 	margin:0;
 	padding:0;
-	color:#2FADDE;
+	color:#428BCA;
 }
 
 
@@ -719,7 +719,7 @@ form#commentform textarea {
 height: 100%;
 opacity: 0.80;
 filter: alpha(opacity=80);
-background: #2FADDE;
+background: #428BCA;
 }
 
 .item-thumbs .hover-wrap .overlay-img-thumb {
@@ -758,7 +758,7 @@ ul.portfolio-categ li a{
 	color:#353535;
 }
 ul.portfolio-categ li.active{
-border: 1px solid #2FADDE;
+border: 1px solid #428BCA;
 }
 
 ul.portfolio-categ li.active a:hover, ul.portfolio-categ li a:hover,ul.portfolio-categ li a:focus,ul.portfolio-categ li a:active {
@@ -800,7 +800,7 @@ color: #fff;
 text-align: center;
 border-radius: 50%;
 margin-left: 6px;
-background: #2FADDE;
+background: #428BCA;
 }
 .progress.pb-sm {
 height: 6px!important;
@@ -894,7 +894,7 @@ blockquote cite a:visited 				{ color:#555; }
 
 /* --- button --- */
 .btn{text-align: center;
-background: #2FADDE;
+background: #428BCA;
 color: #fff;
 }
 .btn-theme {
@@ -1158,7 +1158,7 @@ border: 1px solid #e6e6e6;
 
 .pricing-box-item .pricing-terms {
 	text-align: center;
-	background: #2FADDE;
+	background: #428BCA;
 	display: block;
 	overflow: hidden;
 	padding: 11px 0 5px;

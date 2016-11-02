@@ -77,4 +77,6 @@ Route::group(['middleware' => 'web'], function () {
     Route::controller("/calendario","CcalendarioController");
     //Modulo de recurrente
     Route::controller('/actividades-recurrentes', 'CactividadesRecurrentesController');
+    //Modulo de Departamentos
+    Route::controller('/departamentos', 'CdepartamentosController');
 });

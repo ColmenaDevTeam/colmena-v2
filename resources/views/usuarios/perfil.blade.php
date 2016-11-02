@@ -37,6 +37,7 @@
 
 			<div class="row">
 				<div class="perfil-form">
+					<h3><span class="label label-primary">PNF Informática</span></h3>
 					<form id="formPerfil" role="form" method="post" action="/usuarios/actualizar-perfil" name="formPerfil">
 						<div class="row">
 							<input type="hidden" name="_token" value="{{ csrf_token() }}">
@@ -46,7 +47,7 @@
 									<br>{{Auth::user()->nombres}}
 								</div>
 							</div>
-							<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">	
+							<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
 								<div class="form-group has-feedback">
 									<label for="apellidos">Apellidos</label>
 									<br>{{Auth::user()->apellidos}}
@@ -66,8 +67,8 @@
 									@else
 										<br>Femenino
 									@endif
-								</div>						
-							</div>							
+								</div>
+							</div>
 							<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
 								<div class="form-group has-feedback">
 									<label for="usertype">Tipo de Usuario</label>
@@ -101,7 +102,7 @@
 							</div>
 						</div><!-- /.row -->
 					</form>
-						
+
 				</div><!-- /.perfil-form -->
 			</div><!-- /.row -->
 
@@ -113,7 +114,7 @@
 
 			<div class="row">
 				<div class="cambioclave-form" style="display:none;" id="cambioClave">
-					<form id="formCambioClave" role="form" method="post" action="/usuarios/actualizar-clave" 
+					<form id="formCambioClave" role="form" method="post" action="/usuarios/actualizar-clave"
 					name="formCambioClave" onsubmit="validar_clave()">
 						<input type="hidden" name="_token" value="{{ csrf_token() }}">
 						<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
@@ -141,7 +142,7 @@
 							<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
 								<input type="button" value="Actualizar Contraseña" class="btn btn-default" onclick="validar_clave()">
 							</div>
-						</div>																	
+						</div>
 					</form>
 				</div><!-- /.cambioclave-form -->
 			</div><!-- /.row -->
@@ -164,7 +165,7 @@
 		document.getElementById('cambioClave').style.display='block';
 	}
 	function validar_clave() {
-		
+
 		var caract_invalido = " ";
 		var caract_longitud = 6;
 		var cla1 = document.formCambioClave.npassword.value;
