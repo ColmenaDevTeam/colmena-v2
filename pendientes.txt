@@ -1,3 +1,0 @@
-
-Actividades recurrentes:
-    Borrar manualmente el valor 'Diario' en el campo tipo de frecuencia de la BD
