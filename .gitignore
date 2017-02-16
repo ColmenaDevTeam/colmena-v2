@@ -1,8 +1,8 @@
-/vendor
 /node_modules
-Homestead.yaml
+/public/storage
+/storage/*.key
+/vendor
+/.idea
 Homestead.json
-/Free-Bootstrap-Template-for-Multi-purpose-Ladder/*
+Homestead.yaml
 .env
-colmena-sgth.wiki
-URLs.txt

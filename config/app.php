@@ -4,6 +4,18 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Application Name
+    |--------------------------------------------------------------------------
+    |
+    | This value is the name of your application. This value is used when the
+    | framework needs to place the application's name in a notification or
+    | any other location as required by the application or its packages.
+    */
+
+    'name' => 'Laravel',
+
+    /*
+    |--------------------------------------------------------------------------
     | Application Environment
     |--------------------------------------------------------------------------
     |
@@ -39,7 +51,7 @@ return [
     |
     */
 
-    'url' => 'http://localhost',
+    'url' => env('APP_URL', 'http://localhost'),
 
     /*
     |--------------------------------------------------------------------------
@@ -65,7 +77,7 @@ return [
     |
     */
 
-    'locale' => 'es',
+    'locale' => 'en',
 
     /*
     |--------------------------------------------------------------------------
@@ -78,7 +90,7 @@ return [
     |
     */
 
-    'fallback_locale' => 'es',
+    'fallback_locale' => 'en',
 
     /*
     |--------------------------------------------------------------------------
@@ -91,7 +103,7 @@ return [
     |
     */
 
-    'key' => env('APP_KEY', 'HQlZuca666kg0wXlHcbB93m0C15rmwIk'),
+    'key' => env('APP_KEY'),
 
     'cipher' => 'AES-256-CBC',
 
@@ -109,6 +121,8 @@ return [
     */
 
     'log' => env('APP_LOG', 'single'),
+
+    'log_level' => env('APP_LOG_LEVEL', 'debug'),
 
     /*
     |--------------------------------------------------------------------------
@@ -138,6 +152,7 @@ return [
         Illuminate\Foundation\Providers\FoundationServiceProvider::class,
         Illuminate\Hashing\HashServiceProvider::class,
         Illuminate\Mail\MailServiceProvider::class,
+        Illuminate\Notifications\NotificationServiceProvider::class,
         Illuminate\Pagination\PaginationServiceProvider::class,
         Illuminate\Pipeline\PipelineServiceProvider::class,
         Illuminate\Queue\QueueServiceProvider::class,
@@ -149,13 +164,19 @@ return [
         Illuminate\View\ViewServiceProvider::class,
 
         /*
+         * Package Service Providers...
+         */
+
+        //
+
+        /*
          * Application Service Providers...
          */
-        Colmena\Providers\AppServiceProvider::class,
-        Colmena\Providers\AuthServiceProvider::class,
-        Colmena\Providers\EventServiceProvider::class,
-        Colmena\Providers\RouteServiceProvider::class,
-        Barryvdh\DomPDF\ServiceProvider::class,
+        App\Providers\AppServiceProvider::class,
+        App\Providers\AuthServiceProvider::class,
+        // App\Providers\BroadcastServiceProvider::class,
+        App\Providers\EventServiceProvider::class,
+        App\Providers\RouteServiceProvider::class,
 
     ],
 
@@ -172,37 +193,38 @@ return [
 
     'aliases' => [
 
-        'App'       => Illuminate\Support\Facades\App::class,
-        'Artisan'   => Illuminate\Support\Facades\Artisan::class,
-        'Auth'      => Illuminate\Support\Facades\Auth::class,
-        'Blade'     => Illuminate\Support\Facades\Blade::class,
-        'Cache'     => Illuminate\Support\Facades\Cache::class,
-        'Config'    => Illuminate\Support\Facades\Config::class,
-        'Cookie'    => Illuminate\Support\Facades\Cookie::class,
-        'Crypt'     => Illuminate\Support\Facades\Crypt::class,
-        'DB'        => Illuminate\Support\Facades\DB::class,
-        'Eloquent'  => Illuminate\Database\Eloquent\Model::class,
-        'Event'     => Illuminate\Support\Facades\Event::class,
-        'File'      => Illuminate\Support\Facades\File::class,
-        'Gate'      => Illuminate\Support\Facades\Gate::class,
-        'Hash'      => Illuminate\Support\Facades\Hash::class,
-        'Lang'      => Illuminate\Support\Facades\Lang::class,
-        'Log'       => Illuminate\Support\Facades\Log::class,
-        'Mail'      => Illuminate\Support\Facades\Mail::class,
-        'Password'  => Illuminate\Support\Facades\Password::class,
-        'Queue'     => Illuminate\Support\Facades\Queue::class,
-        'Redirect'  => Illuminate\Support\Facades\Redirect::class,
-        'Redis'     => Illuminate\Support\Facades\Redis::class,
-        'Request'   => Illuminate\Support\Facades\Request::class,
-        'Response'  => Illuminate\Support\Facades\Response::class,
-        'Route'     => Illuminate\Support\Facades\Route::class,
-        'Schema'    => Illuminate\Support\Facades\Schema::class,
-        'Session'   => Illuminate\Support\Facades\Session::class,
-        'Storage'   => Illuminate\Support\Facades\Storage::class,
-        'URL'       => Illuminate\Support\Facades\URL::class,
+        'App' => Illuminate\Support\Facades\App::class,
+        'Artisan' => Illuminate\Support\Facades\Artisan::class,
+        'Auth' => Illuminate\Support\Facades\Auth::class,
+        'Blade' => Illuminate\Support\Facades\Blade::class,
+        'Bus' => Illuminate\Support\Facades\Bus::class,
+        'Cache' => Illuminate\Support\Facades\Cache::class,
+        'Config' => Illuminate\Support\Facades\Config::class,
+        'Cookie' => Illuminate\Support\Facades\Cookie::class,
+        'Crypt' => Illuminate\Support\Facades\Crypt::class,
+        'DB' => Illuminate\Support\Facades\DB::class,
+        'Eloquent' => Illuminate\Database\Eloquent\Model::class,
+        'Event' => Illuminate\Support\Facades\Event::class,
+        'File' => Illuminate\Support\Facades\File::class,
+        'Gate' => Illuminate\Support\Facades\Gate::class,
+        'Hash' => Illuminate\Support\Facades\Hash::class,
+        'Lang' => Illuminate\Support\Facades\Lang::class,
+        'Log' => Illuminate\Support\Facades\Log::class,
+        'Mail' => Illuminate\Support\Facades\Mail::class,
+        'Notification' => Illuminate\Support\Facades\Notification::class,
+        'Password' => Illuminate\Support\Facades\Password::class,
+        'Queue' => Illuminate\Support\Facades\Queue::class,
+        'Redirect' => Illuminate\Support\Facades\Redirect::class,
+        'Redis' => Illuminate\Support\Facades\Redis::class,
+        'Request' => Illuminate\Support\Facades\Request::class,
+        'Response' => Illuminate\Support\Facades\Response::class,
+        'Route' => Illuminate\Support\Facades\Route::class,
+        'Schema' => Illuminate\Support\Facades\Schema::class,
+        'Session' => Illuminate\Support\Facades\Session::class,
+        'Storage' => Illuminate\Support\Facades\Storage::class,
+        'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
-        'View'      => Illuminate\Support\Facades\View::class,
-        'PDF'       => Barryvdh\DomPDF\Facade::class,
+        'View' => Illuminate\Support\Facades\View::class,
 
     ],
 

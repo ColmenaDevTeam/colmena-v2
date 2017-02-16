@@ -1,44 +1,26 @@
 {
-    "name": "Colmena",
-    "description": "Colmena -SGTH",
-    "keywords": ["colmena", "system"],
-    "license": "CC-BY-NC-4.0",
+    "name": "laravel/laravel",
+    "description": "The Laravel Framework.",
+    "keywords": ["framework", "laravel"],
+    "license": "MIT",
     "type": "project",
-    "authors": [
-        {
-            "name": "Elias Peraza",
-            "email": "eliasperaza0511@gmail.com"
-        },
-        {
-            "name": "Quintin Soto",
-            "email": "quintin.soto96@gmail.com"
-        },
-        {
-            "name": "Victor Hidalgo",
-            "email": "pkzkon@gmail.com"
-        }
-    ],
     "require": {
-        "php": ">=5.5.9",
-        "laravel/framework": "5.2.*",
-        "phpmailer/phpmailer": "^5.2",
-        "doctrine/dbal": "^2.5"
+        "php": ">=5.6.4",
+        "laravel/framework": "5.3.*"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
         "mockery/mockery": "0.9.*",
-        "phpunit/phpunit": "~4.0",
-        "symfony/css-selector": "2.8.*|3.0.*",
-        "symfony/dom-crawler": "2.8.*|3.0.*",
-        "guzzlehttp/guzzle": "~5.3|~6.0",           
-        "barryvdh/laravel-dompdf": "0.6.*"
+        "phpunit/phpunit": "~5.0",
+        "symfony/css-selector": "3.1.*",
+        "symfony/dom-crawler": "3.1.*"
     },
     "autoload": {
         "classmap": [
             "database"
         ],
         "psr-4": {
-            "Colmena\\": "app/"
+            "App\\": "app/"
         }
     },
     "autoload-dev": {
@@ -48,23 +30,22 @@
     },
     "scripts": {
         "post-root-package-install": [
-            "php -r \"copy('.env.example', '.env');\""
+            "php -r \"file_exists('.env') || copy('.env.example', '.env');\""
         ],
         "post-create-project-cmd": [
             "php artisan key:generate"
         ],
         "post-install-cmd": [
-            "php artisan clear-compiled",
+            "Illuminate\\Foundation\\ComposerScripts::postInstall",
             "php artisan optimize"
         ],
-        "pre-update-cmd": [
-            "php artisan clear-compiled"
-        ],
         "post-update-cmd": [
+            "Illuminate\\Foundation\\ComposerScripts::postUpdate",
             "php artisan optimize"
         ]
     },
     "config": {
-        "preferred-install": "dist"
+        "preferred-install": "dist",
+        "sort-packages": true
     }
 }
