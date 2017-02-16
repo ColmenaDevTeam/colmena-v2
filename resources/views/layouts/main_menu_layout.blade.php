@@ -1,6 +1,3 @@
-<!--
-  @author: Elias P. @tesoner
--->
 <!-- start header -->
 <header>
 <nav class="navbar navbar-default" role="navigation">

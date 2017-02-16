@@ -1,7 +1,3 @@
-<!--
-@author Elias D. Peraza @tesoner
--->
-
 <footer>
 <div class="container fixed-bottom">
     <div class="row">

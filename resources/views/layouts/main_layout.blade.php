@@ -1,32 +1,3 @@
-<!--
-@author: tesoner
-EJ:
-template.blade.php:
-<html>
-<body>
-    @ include ('header')
-    @ yield ('content')
-    @ include ('footer')
-</body>
-</html>
-
-header.blade.php
-<header>
-    bla bla bla
-    @ include ('menu')
-</header>
-
-menu.blade.php
-<ul>
-    <li>asdf</li>
-</ul>
-
-footer.blade.php
-<footer>
-    bla bla bla
-</footer>
-
--->
 <!DOCTYPE html>
 <html lang="es">
 <head>
