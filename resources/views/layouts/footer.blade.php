@@ -38,32 +38,32 @@
             <div class="col-lg-6">
                 <ul class="social-network">
                     <li>
-                        <a target="_blank" href="https://github.com/ColmenaDevTeam/colmena-sgth" data-placement="top" title="Repositorio del Proyecto en GitHub">
+                        <a target="_blank" href="https://github.com/ColmenaDevTeam/colmena-v2" data-placement="top" title="Repositorio del Proyecto en GitHub">
                             <i class="fa fa-github-alt"></i>
                         </a>
                     </li>
                     <li>
-                        <a target="_blank" href="https://github.com/ColmenaDevTeam/colmena-sgth/wiki" data-placement="top" title="Manual de Usuario: Wiki">
+                        <a target="_blank" href="https://github.com/ColmenaDevTeam/colmena-v2/wiki" data-placement="top" title="Manual de Usuario: Wiki">
                             <i class="fa fa-file-text"></i>
                         </a>
-                    </li>
+                    </li><!--
                     <li>
-                        <a target="" href="https://raw.githubusercontent.com/ColmenaDevTeam/colmena-sgth/master/documentacion/Manual-de-usuario-Colmena-SGTH.pdf" data-placement="top" title="Manual de Usuario: PDF">
+                        <a target="" href="https://raw.githubusercontent.com/ColmenaDevTeam/colmena-v2/master/documentacion/Manual-de-usuario-Colmena-SGTH.pdf" data-placement="top" title="Manual de Usuario: PDF">
                             <i class="fa fa-file-pdf-o"></i>
                         </a>
-                    </li><!--
+                    </li>
                     <li>
                         <a target="_blank" href="#" data-placement="top" title="Descargas">
                             <i class="fa fa-download"></i>
                         </a>
                     </li>-->
                     <li>
-                        <a target="_blank" href="https://github.com/ColmenaDevTeam/colmena-sgth/issues?utf8=%E2%9C%93&q=is%3Aopen" data-placement="top" title="Reportar fallas o incidencias">
+                        <a target="_blank" href="https://github.com/ColmenaDevTeam/colmena-v2/issues?utf8=%E2%9C%93&q=is%3Aopen" data-placement="top" title="Reportar fallas o incidencias">
                             <i class="fa fa-bug"></i>
                         </a>
                     </li>
                     <li>
-                        <a target="_blank" href="https://github.com/ColmenaDevTeam/colmena-sgth/stargazers" data-placement="top" title="Calificar Colmena -SGTH con una estrella">
+                        <a target="_blank" href="https://github.com/ColmenaDevTeam/colmena-v2/stargazers" data-placement="top" title="Calificar Colmena -SGTH con una estrella">
                             <i class="fa fa-star-half-full"></i>
                         </a>
                     </li>
