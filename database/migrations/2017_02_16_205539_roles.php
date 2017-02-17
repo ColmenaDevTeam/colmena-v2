@@ -27,6 +27,6 @@ class Roles extends Migration
      */
     public function down()
     {
-        Schema::dropIfExist('roles');
+        Schema::drop('roles');
     }
 }

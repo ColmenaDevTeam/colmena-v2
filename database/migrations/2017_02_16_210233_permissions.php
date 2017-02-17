@@ -27,6 +27,6 @@ class Permissions extends Migration
      */
     public function down()
     {
-        Schema::dropIfExist('permissions');
+        Schema::drop('permissions');
     }
 }

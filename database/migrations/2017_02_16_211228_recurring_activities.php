@@ -1,4 +1,4 @@
-<?php
+s<?php
 
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
@@ -36,6 +36,6 @@ class RecurringActivities extends Migration
      */
     public function down()
     {
-        Schema::dropIfExist('recurring_activities');
+        Schema::drop('recurring_activities');
     }
 }

@@ -29,6 +29,6 @@ class UsersHasRecurringActivities extends Migration
      */
     public function down()
     {
-        Schema::dropIfExist('users_has_recurring_activities');
+        Schema::drop('users_has_recurring_activities');
     }
 }

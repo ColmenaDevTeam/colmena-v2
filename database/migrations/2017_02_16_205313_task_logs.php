@@ -31,6 +31,6 @@ class TaskLogs extends Migration
      */
     public function down()
     {
-        Schema::dropIfExist('task_logs');
+        Schema::drop('task_logs');
     }
 }

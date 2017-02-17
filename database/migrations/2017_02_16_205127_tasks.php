@@ -37,6 +37,6 @@ class Tasks extends Migration
      */
     public function down()
     {
-        Schema::dropIfExist('tasks');
+        Schema::drop('tasks');
     }
 }

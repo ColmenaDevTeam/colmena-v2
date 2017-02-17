@@ -22,9 +22,11 @@ class CreateUsersTable extends Migration
 			$table->string('phone', 15);
             $table->string('email')->unique();
             $table->string('password');
-			$table->date('birthdate');
+			$table->date('birthday');
 			$table->boolean('gender');
 			$table->boolean('active')->nullable();
+			$table->integer('department_id')->unsigned();
+			$table->foreign('department_id')->references('id')->on('departments')->onUpdate('cascade');
             $table->rememberToken();
             $table->timestamps();
         });
@@ -37,6 +39,6 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::drop('users');
     }
 }

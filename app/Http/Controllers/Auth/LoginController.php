@@ -36,4 +36,14 @@ class LoginController extends Controller
     {
         $this->middleware('guest', ['except' => 'logout']);
     }
+
+	/**
+     * Overriding field name.
+     *
+     * @var string
+     */
+	public function username()
+	{
+		return 'cedula';
+	}
 }

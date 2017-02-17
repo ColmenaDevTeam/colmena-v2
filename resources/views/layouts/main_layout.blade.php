@@ -12,6 +12,8 @@
 <link href="/css/fancybox/jquery.fancybox.css" rel="stylesheet">
 <link href="/css/flexslider.css" rel="stylesheet" />
 <link href="/css/style.css" rel="stylesheet" />
+@yield('customcss')
+
 <!--Estos archivos no existen en el template original
 <link href="css/jcarousel.css" rel="stylesheet" />
 
@@ -40,14 +42,33 @@
 </head>
 <body>
 <div id="wrapper">
-@include("layouts.main_menu_layout")
+@include("layouts.menu")
 
 
-@yield('contenido')
+@yield('content')
 
 
 </div><!-- ./wrapper -->
 @include("layouts.footer")
 
 </body>
+    <!-- javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/js/jquery.js"></script>
+    <script src="/js/jquery.easing.1.3.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/jquery.fancybox.pack.js"></script>
+    <script src="/js/jquery.fancybox-media.js"></script>
+    <script src="/js/portfolio/jquery.quicksand.js"></script>
+    <script src="/js/portfolio/setting.js"></script>
+    <script src="/js/jquery.flexslider.js"></script>
+    <script src="/js/animate.js"></script>
+    <script src="/js/custom.js"></script>
+    <!--Archivo faltante en el template original
+    <script src="/js/owl-carousel/owl.carousel.js"></script>
+    -->
+	<script src="/js/main.js"></script>
+
+	@yield('customjs')
 </html>

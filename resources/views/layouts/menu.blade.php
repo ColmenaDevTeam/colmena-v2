@@ -14,26 +14,30 @@
     <div class="collapse navbar-collapse navbar-ex1-collapse">
         <ul class="nav navbar-nav">
             @if (Auth::check())
-                <?php
-                $notificaciones = [];
-                $tareas = Auth::user()->tareas;
-                foreach ($tareas as $Otarea){
-                    if(!$Otarea->visto)
-                        $notificaciones[] = $Otarea;
-                }
-                ?>
+				{{--
+                @php
+					$notificaciones = [];
+					$tareas = Auth::user()->tareas;
+					foreach ($tareas as $Otarea){
+						if(!$Otarea->visto)
+							$notificaciones[] = $Otarea;
+					}
+                @endphp
+				--}}
                 <li class="dropdown pull-right">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+						{{--
                         {{Auth::user()->getNombreCompleto()}}
                         @if(count($notificaciones) > 0)
                             <span class="badge badge-menu-bar"> <i class="fa fa-flag"></i> {{count($notificaciones)}}</span>
                         @endif
-
+						--}}
                         <b class="caret"></b>
                     </a>
                     <ul class="dropdown-menu">
                             <li><a href="/usuarios/perfil"> <i class="fa fa-btn fa-user"> </i> Mi Perfil </a> </li>
                             <li class="divider"></li>
+							{{--
                             @foreach ($notificaciones as $notificacion)
                                 <li>
                                     <a class="" href="{{$notificacion->getUrl()}}">
@@ -45,30 +49,31 @@
                             @if(count($notificaciones) > 0)
                                 <li class="divider"></li>
                             @endif
-
+							--}}
                             <li><a href="{{ url('logout') }}"><i class="fa fa-btn fa-sign-out"></i> Cerrar sesión </a></li>
                     </ul>
                 </li>
-                <li><a href="/usuarios/perfil"></a></li>
+                <li><a href="/users/profile"></a></li>
 
             @else
                 <li><a href="{{url('login')}}"><i class="fa fa-btn fa-sign-in"> </i> Ingresar</a></li>
                 <li>
-                    <a href="/acerca-de" class="pull-right">
+                    <a href="/about-us" class="pull-right">
                         <i class="fa fa-btn fa-info-circle"> </i> Acerca de
                     </a>
                 </li>
 
             @endif
         </ul>
-        <a class="navbar-brand" href="/acerca-de"><img src="/img/logo/logo-rectangle-inverse.png" alt="logo"/></a>
+        <a class="navbar-brand" href="/about-us"><img src="/img/logo/logo-rectangle-inverse.png" alt="logo"/></a>
         @if (Auth::check())
             <ul class="nav navbar-nav navbar-right">
                 <!-- AQUI LAS OPCIONES DE USUARIO NORMAL-->
-                <li><a href="/cartelera">Cartelera</a></li>
+                <li><a href="/home">Cartelera</a></li>
                 <!-- AQUI LAS OPCIONES DE MODULOS DISPONIBLES-->
                 {{--*/ @author /*--}}
-                <?php $modulosAgregados = []; ?>
+				{{--
+                @php $modulosAgregados = []; @endphp
                 @foreach(Auth::user()->roles as $rol)
                     @foreach($rol->getModulosDisponibles() as $moduloDisponible)
                         @if(!in_array($moduloDisponible, $modulosAgregados))
@@ -90,10 +95,11 @@
                                     <li class="divider"></li>
                                 </ul>
                             </li>
-                            <?php $modulosAgregados[] = $moduloDisponible ?>
+                            @php $modulosAgregados[] = $moduloDisponible @endphp
                         @endif
                     @endforeach
                 @endforeach
+				--}}
             </ul>
         @endif
     </div><!-- /.navbar-collapse -->
