@@ -19,6 +19,8 @@ Auth::routes();
 Route::group(['middleware' => ['auth']],function(){
 	Route::get('/inicio', 'HomeController@index');
 	Route::get('/usuarios/registrar', 'UsersController@showDataForm');
+	Route::get('/usuarios/editar/{id}', 'UsersController@getUpdateForm');
+	Route::post('/usuarios/editar/{id}', 'UsersController@update');
 	Route::post('/usuarios/registrar', 'UsersController@register');
 });
 Route::get('/about-us', 'HomeController@about');

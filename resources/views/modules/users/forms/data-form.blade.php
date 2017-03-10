@@ -8,7 +8,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
-					<h2 class="pageTitle">Registro de Usuarios</h2>
+					<h2 class="pageTitle">{{isset($user) ? 'Edición' : 'Registro'}} de usuarios</h2>
 				</div>
 			</div>
 		</div>
@@ -37,11 +37,14 @@
 				<div class="user-data-form">
 					<form id="user-data-form" role="form" method="post">
 						{{ csrf_field() }}
+						@if(isset($user))
+							<input type="hidden" name="id" value="{{ $user->id }}">
+						@endif
 						<div class="row">
 							<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
 								<div class="form-group has-feedback">
 									<label for="cedula">Cedula</label>
-									<input type="text" class="form-control" id="cedula" name="cedula" placeholder="23850459">
+									<input type="text" class="form-control" id="cedula" name="cedula" placeholder="23850459" value="{{ isset($user) ? $user->cedula : ''}}">
 									<i class="fa fa-user form-control-feedback"></i>
 								</div>
 								@if ($errors->has('cedula'))
@@ -53,7 +56,7 @@
 							<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
 								<div class="form-group has-feedback">
 									<label for="firstname">Nombres</label>
-									<input type="text" class="form-control" id="firstname" name="firstname" placeholder="Simon Jose">
+									<input type="text" class="form-control" id="firstname" name="firstname" placeholder="Simon Jose" value="{{ isset($user) ? $user->firstname : ''}}">
 									<i class="fa fa-user form-control-feedback"></i>
 								</div>
 								@if ($errors->has('firstname'))
@@ -65,7 +68,7 @@
 							<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
 								<div class="form-group has-feedback">
 									<label for="lastname">Apellidos</label>
-									<input type="text" class="form-control" id="lastname" name="lastname" placeholder="Bolivar Palacios">
+									<input type="text" class="form-control" id="lastname" name="lastname" placeholder="Bolivar Palacios" value="{{ isset($user) ? $user->lastname : ''}}">
 									<i class="fa fa-user form-control-feedback"></i>
 								</div>
 								@if ($errors->has('lastname'))
@@ -93,7 +96,7 @@
 							<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
 								<div class="form-group has-feedback">
 									<label for="email">Correo Electronico</label>
-									<input type="email" class="form-control" id="email" name="email" placeholder="ElLiber@Latam.com">
+									<input type="email" class="form-control" id="email" name="email" placeholder="ElLiber@Latam.com" value="{{ isset($user) ? $user->email : ''}}">
 									<i class="fa fa-envelope form-control-feedback"></i>
 								</div>
 								@if ($errors->has('email'))
@@ -105,7 +108,7 @@
 							<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
 								<div class="form-group has-feedback">
 									<label for="phone">Numero de telefono</label>
-									<input type="tel" class="form-control" id="phone" name="phone" placeholder="04265529587">
+									<input type="tel" class="form-control" id="phone" name="phone" placeholder="04265529587" value="{{ isset($user) ? $user->phone : ''}}">
 									<i class="fa fa-user form-control-feedback"></i>
 								</div>
 								@if ($errors->has('phone'))
@@ -117,19 +120,20 @@
 							<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
 								<div class="form-group has-feedback">
 									  <label for="birthdate">Fecha de nacimiento</label>
-									  <input type="date" name="birthdate" class="form-control input-group" data-inputmask="'mask': '99/99/9999'">
+									  <input type="date" name="birthdate" class="form-control input-group" data-inputmask="'mask': '99/99/9999'" value="{{ isset($user) ? $user->birthdate : ''}}">
 									  <i class="fa fa-calendar form-control-feedback"></i>
+									  @if ($errors->has('birthdate'))
+										  <span class="help-block">
+											  <strong>{{ $errors->first('birthdate') }}</strong>
+										  </span>
+									  @endif
 								</div>
-								@if ($errors->has('birthdate'))
-									<span class="help-block">
-										<strong>{{ $errors->first('birthdate') }}</strong>
-									</span>
-								@endif
 							</div><!-- /.col-xs-1 col-sm-4 col-md-4 col-lg-3 -->
 							<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
 								<div class="form-group has-feedback">
 									<label for="gender">Sexo</label><br>
-									<pre>Masculino <input type="radio" name="gender" value="1"> Femenino <input type="radio" name="gender" value="0"></pre>
+									Masculino <input type="radio" name="gender" value="1" {{ isset($user) && $user->gender ? 'checked' : ''}}>
+									Femenino <input type="radio" name="gender" value="0" {{ isset($user) && !$user->gender ? 'checked' : ''}}>
 								</div>
 								@if ($errors->has('gender'))
 									<span class="help-block">
@@ -138,7 +142,7 @@
 								@endif
 							</div><!-- /.col-xs-1 col-sm-4 col-md-4 col-lg-3 -->
 							<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-								<input type="submit" value="Registrar Usuario	" class="btn btn-default">
+								<input type="submit" value="{{isset($user) ? 'Editar' : 'Registrar'}} usuario" class="btn btn-default">
 							</div> <!-- /.col-xs-12 col-sm-12 col-md-12 col-lg-12-->
 						</div><!-- -/.row-->
 					</form>

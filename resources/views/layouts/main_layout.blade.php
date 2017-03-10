@@ -39,10 +39,11 @@
         background-color: black;
     }
 </style>
+@include("layouts.menu")
 </head>
 	<body>
 		<div id="wrapper">
-		@include("layouts.menu")
+
 			@yield('content')
 
 

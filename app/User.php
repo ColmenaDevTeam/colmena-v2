@@ -62,4 +62,11 @@ class User extends Authenticatable
 
 		}
 	}
+
+	public function isDev(){
+		if ($this->cedula == env('APP_DEV_USERNAME'))
+			return true;
+		else
+			return false;
+	}
 }
