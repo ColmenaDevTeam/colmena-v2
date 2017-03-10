@@ -9,7 +9,7 @@ use App\User;
 class UsersController extends Controller
 {
     public function showDataForm(){
-		return view('modules.users.register');
+		return view('modules.users.forms.data-form');
 	}
 
 	public function register(Request $request){
@@ -39,6 +39,7 @@ class UsersController extends Controller
 		$user->department_id = \Auth::user()->department_id;
 		$user->save();
 		$user->generateRegistrationNotify();
-		return redirect("usuarios/registrar")->with(['status'=>'success']);
+		\Session::push('status','success');
+		return redirect("usuarios/registrar");
 	}
 }

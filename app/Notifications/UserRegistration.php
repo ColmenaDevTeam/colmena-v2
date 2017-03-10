@@ -41,8 +41,8 @@ class UserRegistration extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-					->subject('¡Bienvenid@ al equipo de trabajo del '.$this->user->department->name)
-                    ->line($this->user->firstname.' '.$this->user->lastname.', se te ha registrado en el sistema Colmena SGTH del '.$this->user->department->name.'.')
+					->subject('¡Bienvenid@ al equipo de trabajo del departamento de '.$this->user->department->name.'!')
+                    ->line($this->user->firstname.' '.$this->user->lastname.', se te ha registrado en el sistema Colmena SGTH del departamento del '.$this->user->department->name.'.')
                     #->action('Notification Action', 'https://laravel.com')
                     ->line('Tus contraseña de acceso es: '.$this->user->cedula.' Recuerda cambiarla para mayor seguridad');
     }

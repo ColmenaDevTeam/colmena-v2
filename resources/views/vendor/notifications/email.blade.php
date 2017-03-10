@@ -88,9 +88,9 @@ $style = [
                                                 {{ $greeting }}
                                             @else
                                                 @if ($level == 'error')
-                                                    Whoops!
+                                                    Oops!
                                                 @else
-                                                    Hello!
+                                                    Buen día!
                                                 @endif
                                             @endif
                                         </h1>
@@ -176,7 +176,7 @@ $style = [
                                     <td style="{{ $fontFamily }} {{ $style['email-footer_cell'] }}">
                                         <p style="{{ $style['paragraph-sub'] }}">
                                             &copy; {{ date('Y') }}
-                                            <a style="{{ $style['anchor'] }}" href="{{ url('/') }}" target="_blank">{{ config('app.name') }}</a>.
+                                            <a style="{{ $style['anchor'] }}" href="{{ env('REPOSITORY_URL') }}" target="_blank">{{ config('app.name') }}</a>.
                                             Licenced under Creative Commons.
                                         </p>
                                     </td>
