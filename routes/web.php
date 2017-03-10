@@ -12,12 +12,13 @@
 */
 
 Route::get('/', function () {
-    return redirect('/home');
+    return redirect('/inicio');
 });
 
 Auth::routes();
 Route::group(['middleware' => ['auth']],function(){
-	Route::get('/home', 'HomeController@index');
-	Route::get('/users/register', 'UsersController@register');
+	Route::get('/inicio', 'HomeController@index');
+	Route::get('/usuarios/registrar', 'UsersController@showDataForm');
+	Route::post('/usuarios/registrar', 'UsersController@register');
 });
 Route::get('/about-us', 'HomeController@about');

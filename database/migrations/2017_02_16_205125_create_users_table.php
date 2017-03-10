@@ -22,9 +22,9 @@ class CreateUsersTable extends Migration
 			$table->string('phone', 15);
             $table->string('email')->unique();
             $table->string('password');
-			$table->date('birthday');
+			$table->date('birthdate');
 			$table->boolean('gender');
-			$table->boolean('active')->nullable();
+			$table->boolean('active')->default(true);
 			$table->integer('department_id')->unsigned();
 			$table->foreign('department_id')->references('id')->on('departments')->onUpdate('cascade');
             $table->rememberToken();

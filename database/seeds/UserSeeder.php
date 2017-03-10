@@ -22,7 +22,7 @@ class UserSeeder extends Seeder
         'email'=>'devteam@colmena.uptaeb.edu.ve',
         'password'=>Hash::make("0000"),
         'phone'=>$faker->randomNumber($nbDigits=9),
-        'birthday'=>$faker->unique()->date($format = 'Y-m-d', $max = 'now'),
+        'birthdate'=>$faker->unique()->date($format = 'Y-m-d', $max = 'now'),
         'gender'=>$faker->boolean(TRUE),
 		'active' => true,
 		'department_id' => 1,

@@ -4,11 +4,18 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use App\Notifications\UserRegistration;
 
 class User extends Authenticatable
 {
     use Notifiable;
 
+	/**
+     * The class constants.
+     *
+     *
+     */
+	const PASSWORD_LENGHT = 12;
     /**
      * The attributes that are mass assignable.
      *
@@ -29,7 +36,7 @@ class User extends Authenticatable
     ];
 
 	public function department(){
-		return $this->belongsTo('App\Deparment', 'department_id');
+		return $this->belongsTo('App\Department', 'department_id');
 	}
 
 	public function tasks(){
@@ -46,5 +53,13 @@ class User extends Authenticatable
 
 	public function absences(){
 		return $this->hasMany('App\Absence', 'user_id');
+	}
+
+	public function generateRegistrationNotify(){
+		try {
+			$this->notify(new UserRegistration($this));
+		} catch (Exception $e) {
+
+		}
 	}
 }
