@@ -37,6 +37,7 @@ class Tasks extends Migration
      */
     public function down()
     {
-        Schema::drop('tasks');
+		if(Schema::hasTable('tasks'))
+        	Schema::drop('tasks');
     }
 }

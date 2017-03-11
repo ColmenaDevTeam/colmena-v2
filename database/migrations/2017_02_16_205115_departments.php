@@ -15,9 +15,10 @@ class Departments extends Migration
     {
 		Schema::create('departments', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name', 15)->unique();
+            $table->string('name', 100)->unique();
+			$table->string('slug', 45)->unique();
 			$table->string('description', 45);
-            $table->timestamps();
+            #$table->timestamps();
         });
     }
 
@@ -28,6 +29,7 @@ class Departments extends Migration
      */
     public function down()
     {
-        Schema::drop('departments');
+		if(Schema::hasTable('departments'))
+        	Schema::drop('departments');
     }
 }

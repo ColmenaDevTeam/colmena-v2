@@ -16,7 +16,9 @@ class Roles extends Migration
 		Schema::create('roles', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name',20)->unique();
-            //$table->$table->nullableTimestamps();
+			$table->string('slug',45)->unique();
+            $table->integer('level');
+			$table->timestamps();
         });
     }
 
@@ -27,6 +29,7 @@ class Roles extends Migration
      */
     public function down()
     {
-        Schema::drop('roles');
+		if(Schema::hasTable('roles'))
+        	Schema::drop('roles');
     }
 }

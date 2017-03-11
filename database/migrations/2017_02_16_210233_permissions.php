@@ -16,7 +16,9 @@ class Permissions extends Migration
         Schema::create('permissions', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name',45)->unique();
+			$table->string('slug',45)->unique();
             $table->boolean('navigation')->default(false);
+			$table->integer('level');
         });
     }
 
@@ -27,6 +29,7 @@ class Permissions extends Migration
      */
     public function down()
     {
-        Schema::drop('permissions');
+		if(Schema::hasTable('permissions'))
+        	Schema::drop('permissions');
     }
 }

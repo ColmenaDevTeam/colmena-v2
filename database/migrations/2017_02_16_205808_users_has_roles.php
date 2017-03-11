@@ -29,6 +29,7 @@ class UsersHasRoles extends Migration
      */
     public function down()
     {
-		Schema::drop('users_has_roles');
+		if(Schema::hasTable('users_has_roles'))
+			Schema::drop('users_has_roles');
     }
 }

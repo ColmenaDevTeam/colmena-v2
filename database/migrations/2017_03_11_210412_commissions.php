@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Calendar extends Migration
+class Commissions extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,7 @@ class Calendar extends Migration
      */
     public function up()
     {
-		Schema::create('calendar', function (Blueprint $table) {
-            $table->date('workable_date')->unique();
-            $table->primary('workable_date');  //Add a primary key.
-        });
+        //
     }
 
     /**
@@ -26,7 +23,7 @@ class Calendar extends Migration
      */
     public function down()
     {
-		if(Schema::hasTable('calendar'))
-        Schema::drop('calendar');
+        if(Schema::hasTable('commissions'))
+			Schema::drop('commissions');
     }
 }

@@ -32,6 +32,7 @@ class Absences extends Migration
      */
     public function down()
     {
-        Schema::drop('absences');
+		if(Schema::hasTable('absences'))
+        	Schema::drop('absences');
     }
 }

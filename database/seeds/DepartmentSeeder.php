@@ -13,10 +13,9 @@ class DepartmentSeeder extends Seeder
     public function run()
     {
 		DB::table('departments') -> insert([
-        'name'=>'Programacion',
+        'name'=>'Departamento del Programa Nacional de formacion en Informatica',
+		'slug'=>'pnfi',
         'description'=>'Colmena rules',
-        'created_at'=>Carbon::now(),
-        'updated_at'=>Carbon::now()
     	]);
     }
 }

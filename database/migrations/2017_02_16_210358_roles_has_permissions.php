@@ -30,6 +30,7 @@ class RolesHasPermissions extends Migration
      */
     public function down()
     {
-        Schema::drop('roles_has_permissions');
+		if(Schema::hasTable('roles_has_permissions'))
+        	Schema::drop('roles_has_permissions');
     }
 }

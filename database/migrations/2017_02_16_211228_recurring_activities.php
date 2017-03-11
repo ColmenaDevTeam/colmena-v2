@@ -1,4 +1,4 @@
-s<?php
+<?php
 
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
@@ -25,7 +25,7 @@ class RecurringActivities extends Migration
             $table->date('start_date');
             $table->date('last_launch')->nullable();
             $table->boolean('active')->nullable();
-            $table->nullableTimestamps();
+            $table->timestamps();
         });
     }
 
@@ -36,6 +36,7 @@ class RecurringActivities extends Migration
      */
     public function down()
     {
-        Schema::drop('recurring_activities');
+		if(Schema::hasTable('recurring_activities'))
+        	Schema::drop('recurring_activities');
     }
 }
