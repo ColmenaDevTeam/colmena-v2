@@ -6,5 +6,7 @@ use Illuminate\Http\Request;
 
 class DepartmentsController extends Controller
 {
-    //
+    public function showDataForm(){
+		
+	}
 }

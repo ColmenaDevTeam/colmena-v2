@@ -16,6 +16,8 @@ class User extends Authenticatable
      *
      */
 	const PASSWORD_LENGHT = 12;
+
+	protected $dates = ['birthdate'];
     /**
      * The attributes that are mass assignable.
      *
@@ -68,5 +70,9 @@ class User extends Authenticatable
 			return true;
 		else
 			return false;
+	}
+
+	public function getFullName(){
+		return $this->firstname.' '.$this->lastname;
 	}
 }

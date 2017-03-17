@@ -14,11 +14,24 @@
 Route::get('/', function () {
     return redirect('/inicio');
 });
-
+Route::get('/home', function () {
+    return redirect('/inicio');
+});
 Auth::routes();
 Route::group(['middleware' => ['auth']],function(){
 	Route::get('/inicio', 'HomeController@index');
 
+
+	/**
+	*Departments Routes
+	*/
+	Route::get('/departamentos/registrar', 'DepartmentsController@showDataForm');
+	Route::get('/departamentos/editar/{id}', 'DepartmentsController@showUpdateForm');
+	Route::post('/departamentos/editar/{id}', 'DepartmentsController@update');
+	Route::post('/departamentos/registrar', 'DepartmentsController@register');
+	Route::get('/departamentos/listar', 'DepartmentsController@index');
+	Route::get('/departamentos', function(){ return redirect('/departamentos/listar');});
+	
 	/**
 	*User Routes
 	*/
@@ -28,5 +41,8 @@ Route::group(['middleware' => ['auth']],function(){
 	Route::post('/usuarios/registrar', 'UsersController@register');
 	Route::get('/usuarios/listar', 'UsersController@index');
 	Route::get('/usuarios', function(){ return redirect('/usuarios/listar');});
+	Route::post('/usuarios/desactivar', 'UsersController@desactivate');
+	Route::post('/usuarios/eliminar', 'UsersController@delete');
+	Route::post('/usuarios/reactivar', 'UsersController@reactivate');
 });
 Route::get('/about-us', 'HomeController@about');
