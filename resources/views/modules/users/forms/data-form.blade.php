@@ -16,21 +16,14 @@
 	<section id="content">
 		<div class="container">
 			<div class="row">
-				<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-					<p> </p>
-					@if (Session::has('status'))
-						@if (Session::pull('status') == 'success')
-							<div class="alert alert-success hidden" id="userDataSuccess">
-								<strong>Success!</strong> Your message has been sent to us.
-							</div>
-						@else
-							<div class="alert alert-error hidden" id="userDataError">
-								<strong>Error!</strong> There was an error sending your message.
-							</div>
-						@endif
+				@if (Session::has('success'))
+					@if (Session::pull('success') == true)
+						<div class="alert alert-success" id="userDataSuccess">
+							<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+							<strong>¡Muy bien!</strong> Su petición se procesó con exito.
+						</div>
 					@endif
-
-				</div><!-- /.col-md-1-->
+				@endif
 				@if ($errors->has('cedula'))
 					<div class="alert alert-warning help-block">
 						<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
@@ -91,7 +84,7 @@
 							<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
 								<div class="form-group has-feedback">
 									<label for="cedula">Cedula</label>
-									<input type="text" class="form-control" id="cedula" name="cedula" placeholder="23850459" value="{{ isset($user) ? $user->cedula : ''}}{{ old('cedula') ? old('cedula') : ''}}">
+									<input type="text" class="form-control" id="cedula" name="cedula" placeholder="23850459" value="{{ isset($user) ? $user->cedula : ''}}">
 									<i class="fa fa-user form-control-feedback"></i>
 								</div>
 							</div><!-- /.col-xs-1 col-sm-4 col-md-4 col-lg-3 -->

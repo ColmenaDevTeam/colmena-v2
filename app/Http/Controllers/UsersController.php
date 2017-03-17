@@ -6,8 +6,11 @@ use Illuminate\Http\Request;
 use Validator;
 use App\User;
 
-class UsersController extends Controller
-{
+class UsersController extends Controller{
+
+	public function index(){
+		return view('modules.users.list')->with('users', User::all());
+	}
     public function showDataForm(){
 		return view('modules.users.forms.data-form');
 	}
@@ -41,7 +44,7 @@ class UsersController extends Controller
 		return redirect("usuarios/registrar");
 	}
 
-	public function getUpdateForm(Request $request){
+	public function showUpdateForm(Request $request){
 		$user = User::find($request->id);
 		if (!$user || $user->isDev()) return view('errors.404');
 		return view('modules.users.forms.data-form')->with('user', $user);
@@ -50,8 +53,9 @@ class UsersController extends Controller
 	public function update(Request $request){
 		$user = User::find($request->id);
 		if (!$user || $user->isDev()) return redirect('errors/404');
+		session(['success' => false]);
 		Validator::make($request->input(), [
-			'cedula' => 'numeric|required|unique:users',
+			'cedula' => $user->cedula!=$request->cedula ? 'numeric|required|unique:users' : '',
 			'firstname' => 'regex:/^[[:alpha:]]+( [[:alpha:]]+)?$/|required|min:3|max:45',
 			'lastname' => 'regex:/^[[:alpha:]]+( [[:alpha:]]+)?$/|required|min:3|max:45',
 			'user_type' => 'required',
@@ -65,15 +69,15 @@ class UsersController extends Controller
 		$user->firstname = $request->firstname;
 		$user->lastname = $request->lastname;
 		$user->user_type = $request->user_type;
-		$user->password = \Hash::make($request->cedula);
+		#$user->password = \Hash::make($request->cedula);
 		$user->email = $request->email;
 		$user->phone = $request->phone;
 		$user->birthdate = $request->birthdate;
 		$user->gender = $request->gender;
-		$user->department_id = \Auth::user()->department_id;
+		#$user->department_id = \Auth::user()->department_id;
 		$user->save();
 
-		\Session::push('status','success');
-		return redirect("usuarios/editar/".$request->id)->with('user', $user);
+		session(['success' => true]);
+		return redirect("usuarios/editar/".$user->id)->with('user', $user);
 	}
 }

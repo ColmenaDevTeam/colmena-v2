@@ -18,9 +18,15 @@ Route::get('/', function () {
 Auth::routes();
 Route::group(['middleware' => ['auth']],function(){
 	Route::get('/inicio', 'HomeController@index');
+
+	/**
+	*User Routes
+	*/
 	Route::get('/usuarios/registrar', 'UsersController@showDataForm');
-	Route::get('/usuarios/editar/{id}', 'UsersController@getUpdateForm');
+	Route::get('/usuarios/editar/{id}', 'UsersController@showUpdateForm');
 	Route::post('/usuarios/editar/{id}', 'UsersController@update');
 	Route::post('/usuarios/registrar', 'UsersController@register');
+	Route::get('/usuarios/listar', 'UsersController@index');
+	Route::get('/usuarios', function(){ return redirect('/usuarios/listar');});
 });
 Route::get('/about-us', 'HomeController@about');
