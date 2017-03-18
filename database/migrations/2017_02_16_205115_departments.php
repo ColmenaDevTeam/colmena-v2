@@ -17,7 +17,7 @@ class Departments extends Migration
             $table->increments('id');
             $table->string('name', 100)->unique();
 			$table->string('slug', 45)->unique();
-			$table->string('description', 45);
+			$table->text('description');
             #$table->timestamps();
         });
     }

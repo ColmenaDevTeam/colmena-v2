@@ -16,13 +16,11 @@
 	<section id="content">
 		<div class="container">
 			<div class="row">
-				@if (Session::has('success'))
-					@if (Session::pull('success') == true)
-						<div class="alert alert-success" id="userDataSuccess">
-							<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-							<strong>¡Muy bien!</strong> Su petición se procesó con exito.
-						</div>
-					@endif
+				@if (Session::pull('success') == true)
+					<div class="alert alert-success" id="userDataSuccess">
+						<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+						<strong>¡Muy bien!</strong> Su petición se procesó con exito.
+					</div>
 				@endif
 				@if ($errors->has('cedula'))
 					<div class="alert alert-warning help-block">

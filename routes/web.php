@@ -23,26 +23,34 @@ Route::group(['middleware' => ['auth']],function(){
 
 
 	/**
-	*Departments Routes
+	*Department Routes
 	*/
-	Route::get('/departamentos/registrar', 'DepartmentsController@showDataForm');
-	Route::get('/departamentos/editar/{id}', 'DepartmentsController@showUpdateForm');
-	Route::post('/departamentos/editar/{id}', 'DepartmentsController@update');
-	Route::post('/departamentos/registrar', 'DepartmentsController@register');
-	Route::get('/departamentos/listar', 'DepartmentsController@index');
+	Route::get('/departamentos/registrar', 'DepartmentController@showDataForm');
+	Route::get('/departamentos/editar/{id}', 'DepartmentController@showUpdateForm');
+	Route::post('/departamentos/editar/{id}', 'DepartmentController@update');
+	Route::post('/departamentos/registrar', 'DepartmentController@register');
+	Route::get('/departamentos/listar', 'DepartmentController@index');
 	Route::get('/departamentos', function(){ return redirect('/departamentos/listar');});
-	
+
 	/**
 	*User Routes
 	*/
-	Route::get('/usuarios/registrar', 'UsersController@showDataForm');
-	Route::get('/usuarios/editar/{id}', 'UsersController@showUpdateForm');
-	Route::post('/usuarios/editar/{id}', 'UsersController@update');
-	Route::post('/usuarios/registrar', 'UsersController@register');
-	Route::get('/usuarios/listar', 'UsersController@index');
+	Route::get('/usuarios/registrar', 'UserController@showDataForm');
+	Route::get('/usuarios/editar/{id}', 'UserController@showUpdateForm');
+	Route::post('/usuarios/editar/{id}', 'UserController@update');
+	Route::post('/usuarios/registrar', 'UserController@register');
+	Route::get('/usuarios/listar', 'UserController@index');
 	Route::get('/usuarios', function(){ return redirect('/usuarios/listar');});
-	Route::post('/usuarios/desactivar', 'UsersController@desactivate');
-	Route::post('/usuarios/eliminar', 'UsersController@delete');
-	Route::post('/usuarios/reactivar', 'UsersController@reactivate');
+	Route::post('/usuarios/desactivar', 'UserController@desactivate');
+	Route::post('/usuarios/eliminar', 'UserController@delete');
+	Route::post('/usuarios/reactivar', 'UserController@reactivate');
+
+
+	/**
+	*Calendar Routes
+	*/
+	Route::get('/calendario/actualizar', 'CalendarController@showDataForm');
+	Route::post('/calendario/actualizar', 'CalendarController@update');
+	Route::get('/calendario/actualizar', 'CalendarController@show');
 });
 Route::get('/about-us', 'HomeController@about');

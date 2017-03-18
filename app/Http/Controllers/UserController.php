@@ -7,10 +7,10 @@ use Validator;
 use App\User;
 use Carbon\Carbon;
 
-class UsersController extends Controller{
+class UserController extends Controller{
 
 	public function index(){
-		return view('modules.users.list')->with('users', User::all());
+		return view('modules.users.list')->with('users', User::all()->where('cedula', '<>', env('APP_DEV_USERNAME')));
 	}
     public function showDataForm(){
 		return view('modules.users.forms.data-form');
@@ -54,7 +54,7 @@ class UsersController extends Controller{
 
 	public function update(Request $request){
 		$user = User::find($request->id);
-		if (!$user || $user->isDev()) return redirect('errors/404');
+		if (!$user || $user->isDev()) return view('errors/404');
 
 		$minDate = Carbon::now()->subYear(18)->format('Y/m/d');
 
@@ -80,7 +80,7 @@ class UsersController extends Controller{
 		$user->gender = $request->gender;
 		#$user->department_id = \Auth::user()->department_id;
 		$user->save();
-		$users = User::all();
+		$users = User::all()->where('cedula', '<>', env('APP_DEV_USERNAME'));
 		\Session::push('success', true);
 		return redirect("usuarios/listar")->with('users', $users);
 	}
@@ -88,7 +88,7 @@ class UsersController extends Controller{
 	public function desactivate(Request $request){
 		#dd($request->all());
 		$user = User::find($request->user_id);
-		if (!$user || $user->isDev()) return redirect('errors/404');
+		if (!$user || $user->isDev()) return view('errors/404');
 
 		$user->active = false;
 		$user->save();
@@ -99,7 +99,7 @@ class UsersController extends Controller{
 	public function reactivate(Request $request){
 		#dd($request->all());
 		$user = User::find($request->re_user_id);
-		if (!$user || $user->isDev()) return redirect('errors/404');
+		if (!$user || $user->isDev()) return view('errors/404');
 
 		$user->active = true;
 		$user->save();

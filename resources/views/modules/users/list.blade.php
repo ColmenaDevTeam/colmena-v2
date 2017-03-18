@@ -17,24 +17,22 @@
 	</section>
 	<section id="content">
 		<div class="container">
-			@if(session()->has('success'))
-				<div class="row">
-					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-						<p> </p>
-						@if(session('success') == true)
-							<div class="alert alert-success alert-dismissable">
-								<button type="button" class="close" data-dismiss="alert">&times;</button>
-								<strong>¡Muy bien!</strong> La accion se ha realizado con exito.
-							</div>
-						@else
-							<div class="alert alert-danger alert-dismissable">
-								<button type="button" class="close" data-dismiss="alert">&times;</button>
-								<strong>¡Error!</strong> Ocurrió un error al registrar. Por favor intentelo de nuevo
-							</div>
-						@endif
-					</div><!-- /.col-xs-12 col-sm-12 col-md-12 col-lg-12-->
-				</div><!-- /.row-->
-			@endif
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+					<p> </p>
+					@if(session()->has('success') && session('success') == true)
+						<div class="alert alert-success alert-dismissable">
+							<button type="button" class="close" data-dismiss="alert">&times;</button>
+							<strong>¡Muy bien!</strong> La accion se ha realizado con exito.
+						</div>
+					@else
+						<div class="alert alert-danger alert-dismissable">
+							<button type="button" class="close" data-dismiss="alert">&times;</button>
+							<strong>¡Error!</strong> Ocurrió un error al registrar. Por favor intentelo de nuevo
+						</div>
+					@endif
+				</div><!-- /.col-xs-12 col-sm-12 col-md-12 col-lg-12-->
+			</div><!-- /.row-->
 		</div>
 		<div class="container-fluid">
 			<div class="row">
@@ -44,7 +42,7 @@
 					</div>
 				</div>
 					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-						<table id="datatable" class="table table-striped table-bordered bulk_action">
+						<table id="datatable" class="table table-striped bulk_action">
 							<thead>
 								<tr>
 									<td align="center"><strong>Cedula</strong></td>
