@@ -1,0 +1,12 @@
+#footer {
+	width: 100%;
+	bottom: 0px;
+	padding-top: 0px;
+    padding-right: 0px;
+  	padding-bottom: 0px;
+    padding-left: 0px;
+	height: 100%;
+	background: #333333;
+	position: relative;
+	bottom: -400px;
+}

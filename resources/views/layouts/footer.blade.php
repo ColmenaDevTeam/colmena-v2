@@ -1,23 +1,20 @@
-<footer>
-<div class="container fixed-bottom">
+<footer id="footer">
+<div class="container">
     <div class="row">
         <div class="col-lg-12">
             <div class="widget">
-                <h5 class="widgetheading">
-                    Sistema Automatizado Para La Gestión Del
-                    Talento Humano Del Programa Nacional de
-                    Formación En Informática En La Universidad
+                <h5 class="widgetheading" class="text-center">
+                    Sistema automatizado para la gestión del
+                    talento humano de la Universidad
                     Politécnica Territorial Andrés Eloy Blanco
                 </h5><hr>
                 <strong>
-                    Colmena -Sistema de Gestión del Talento Humano
+                    Colmena -SGTH
                 </strong>
                 Ha sido desarrollado como Proyecto Socio-tecnológico.<br>
                 <a href="/acerca-de" data-placement="top" title="Acerca De Colmena -SGTH">
-                    Más acerca de Colmena -SGTH
+                    Más acerca de Colmena
                 </a>
-                <br>
-                </p>
             </div>
         </div>
     </div>

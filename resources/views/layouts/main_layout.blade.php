@@ -12,6 +12,7 @@
 <link href="/css/fancybox/jquery.fancybox.css" rel="stylesheet">
 <link href="/css/flexslider.css" rel="stylesheet" />
 <link href="/css/style.css" rel="stylesheet" />
+<link href="/css/super.css" rel="stylesheet" />
 @yield('customcss')
 
 <!--Estos archivos no existen en el template original
@@ -46,9 +47,9 @@
 
 			@yield('content')
 
-
-		</div><!-- ./wrapper -->
 			@include("layouts.footer")
+		</div><!-- ./wrapper -->
+
 		<!-- javascript
 		================================================== -->
 		<!-- Placed at the end of the document so the pages load faster -->

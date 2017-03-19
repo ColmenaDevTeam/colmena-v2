@@ -45,12 +45,12 @@ Route::group(['middleware' => ['auth']],function(){
 	Route::post('/usuarios/eliminar', 'UserController@delete');
 	Route::post('/usuarios/reactivar', 'UserController@reactivate');
 
-
 	/**
 	*Calendar Routes
 	*/
 	Route::get('/calendario/actualizar', 'CalendarController@showDataForm');
 	Route::post('/calendario/actualizar', 'CalendarController@update');
-	Route::get('/calendario/actualizar', 'CalendarController@show');
+	Route::get('/calendario/ver', 'CalendarController@show');
+	Route::get('/calendario', function(){ return redirect('/calendario/ver');});
 });
 Route::get('/about-us', 'HomeController@about');

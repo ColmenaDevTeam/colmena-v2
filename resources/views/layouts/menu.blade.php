@@ -65,7 +65,7 @@
 
             @endif
         </ul>
-        <a class="navbar-brand" href="/about-us"><img src="/img/logo/logo-rectangle-inverse.png" alt="logo"/></a>
+        <a class="navbar-brand" href="/about-us"><img src="/img/logo/logo.png" alt="logo"/></a>
         @if (Auth::check())
             <ul class="nav navbar-nav navbar-right">
                 <!-- AQUI LAS OPCIONES DE USUARIO NORMAL-->
