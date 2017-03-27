@@ -3,13 +3,14 @@
 @section('content')
 <div class="container">
     <div class="row">
+        <br>
+        <hr>
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">Ingreso</div>
                 <div class="panel-body">
                     <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
                         {{ csrf_field() }}
-
                         <div class="form-group{{ $errors->has('cedula') ? ' has-error' : '' }}">
                             <label for="cedula" class="col-md-4 control-label">Cédula</label>
 

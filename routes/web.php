@@ -22,6 +22,10 @@ Route::group(['middleware' => ['auth']],function(){
 	Route::get('/inicio', 'HomeController@index');
 
 
+    /**
+     * Tasks routes
+     */
+     Route::get('/tareas/usuario');
 	/**
 	*Department Routes
 	*/
